@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Thiago Sosa — Estudiante de Profesorado en Informática, Ciberseguridad, Desarrollo y más.">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Thiago Sosa — Portfolio</title>
+
+    <!-- Favicon SVG inline -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%230056D2' d='M16,2 L4,7 C4,7 4,15 4,18 C4,24 10,30 16,32 C22,30 28,24 28,18 C28,15 28,7 28,7 L16,2 Z'/><path fill='%23FFFFFF' d='M10.5,17 L14,13 L12,13 L8,17 L12,21 L14,21 L10.5,17 Z M21.5,17 L18,21 L20,21 L24,17 L20,13 L18,13 L21.5,17 Z M15,12 L13,22 L15,22 L17,12 L15,12 Z'/></svg>"
+        type="image/svg+xml">
+
+    <!-- Google Fonts — Space Grotesk + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- PARTICLES BACKGROUND -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Inicio">TS<span class="logo-dot">.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#timeline">Formación</a></li>
+                <li><a href="#professions">Mis profesiones</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact" class="nav-cta">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <header id="hero" class="hero section">
+        <div class="hero-bg-particles" aria-hidden="true"></div>
+        <div class="container hero-content">
+            <p class="hero-greeting">Hola, soy</p>
+            <h1 class="hero-name">Thiago Sosa</h1>
+            <p class="hero-role"><span id="typingCarousel"></span><span class="cursor" aria-hidden="true">|</span></p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                <a href="#contact" class="btn btn-outline">Contáctame</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Desplazar hacia abajo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </a>
+    </header>
+
+    <!-- ═══════════════════ SOBRE MÍ ═══════════════════ -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
+            <div class="section-line"></div>
+
+            <div class="about-status">
+                <span class="status-dot"></span> Disponible para proyectos &amp; colaboraciones
+            </div>
+
+            <div class="about-grid">
+                <div class="about-photo-wrapper reveal">
+                    <img src="assets/photo-profiles.png" alt="Thiago Sosa" class="about-photo" draggable="false"
+                        oncontextmenu="return false" loading="lazy">
+                </div>
+
+                <div class="about-text reveal">
+                    <p>Más que código y cables, busco <strong>conexiones</strong>. Mi perfil fusiona la
+                        <strong>precisión técnica</strong> del desarrollo y la ciberseguridad con la <strong>empatía y
+                            pedagogía</strong> de la docencia.
+                    </p>
+                    <p>No solo construyo software, administro sistemas o aseguro redes; creo puentes de conocimiento. Mi
+                        enfoque es holístico: <strong>analítico</strong> para resolver problemas complejos, pero
+                        <strong>humano</strong> para comunicarlos y transmitirlos.
+                    </p>
+                    <p>Me apasiona explorar la filosofía detrás de la tecnología: ¿Cómo aprendemos? ¿Cómo protegemos lo
+                        que valoramos? ¿Cómo creamos sistemas que sean éticos y eficientes?</p>
+
+                    <div class="about-tags">
+                        <span class="tag">🧠 Pensamiento Crítico</span>
+                        <span class="tag">🗣️ Comunicación Asertiva</span>
+                        <span class="tag">🔄 Adaptabilidad</span>
+                        <span class="tag">🎓 Pedagogía</span>
+                        <span class="tag">🤝 Trabajo en Equipo</span>
+                        <span class="tag">🔧 Resolución de Problemas</span>
+                    </div>
+
+                    <div class="about-badges">
+                        <div class="badge-card">
+                            <div class="badge-icon">🎓</div>
+                            <div>
+                                <span class="badge-label">Formación</span>
+                                <span class="badge-value">Profesorado en Informática (en curso)</span>
+                            </div>
+                        </div>
+                        <div class="badge-card">
+                            <div class="badge-icon">&lt;/&gt;</div>
+                            <div>
+                                <span class="badge-label">Enfoque</span>
+                                <span class="badge-value">Educación + IT + CyberSecurity + Desarrollo +
+                                    Contabilidad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FILOSOFÍA -->
+                    <div class="philosophy-block reveal">
+                        <div class="philosophy-label">📜 Filosofía</div>
+                        <p class="philosophy-quote">
+                            "La educación no es llenar un balde, sino encender un fuego."
+                            <span class="philosophy-author">— William Butler Yeats</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CERTIFICACIONES ═══════════════════ -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <h2 class="section-title reveal">Certificaciones</h2>
+            <div class="section-line"></div>
+
+            <div class="cert-grid">
+                <div class="cert-card reveal"
+                    data-img="assets/Certificado-Thiago-Rafael-Sosa-Olivera-l92cc38i_page-0001.jpg">
+                    <img src="assets/Certificado-Thiago-Rafael-Sosa-Olivera-l92cc38i_page-0001.jpg"
+                        alt="Certificado Thiago Rafael Sosa Olivera" draggable="false" oncontextmenu="return false"
+                        loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+                <div class="cert-card reveal" data-img="assets/google-cloud-cybersecurity-certificate.png">
+                    <img src="assets/google-cloud-cybersecurity-certificate.png"
+                        alt="Google Cloud Cybersecurity Certificate" draggable="false" oncontextmenu="return false"
+                        loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+                <div class="cert-card reveal" data-img="assets/introduction-to-cybersecurity.png">
+                    <img src="assets/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity"
+                        draggable="false" oncontextmenu="return false" loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+                <div class="cert-card reveal" data-img="assets/networking-basics.png">
+                    <img src="assets/networking-basics.png" alt="Networking Basics" draggable="false"
+                        oncontextmenu="return false" loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+                <div class="cert-card reveal" data-img="assets/networking-devices-and-initial-configuration.png">
+                    <img src="assets/networking-devices-and-initial-configuration.png"
+                        alt="Networking Devices and Initial Configuration" draggable="false"
+                        oncontextmenu="return false" loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+                <div class="cert-card reveal"
+                    data-img="assets/opswat-introduction-to-critical-infrastructure-protection-icip.png">
+                    <img src="assets/opswat-introduction-to-critical-infrastructure-protection-icip.png"
+                        alt="OPSWAT Introduction to Critical Infrastructure Protection" draggable="false"
+                        oncontextmenu="return false" loading="lazy">
+                    <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                </div>
+            </div>
+
+            <p class="cert-linkedin reveal">
+                <a href="https://www.linkedin.com/in/thiago-sosa-993a673a6/" target="_blank"
+                    rel="noopener noreferrer">Consultar LinkedIn para más información →</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FORMACIÓN / TIMELINE ═══════════════════ -->
+    <section id="timeline" class="section timeline-section">
+        <div class="container">
+            <h2 class="section-title reveal">Formación y Trayectoria</h2>
+            <div class="section-line"></div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 — Actualidad</span>
+                        <h3>Estudiante de Profesorado en Informática</h3>
+                        <p>CeRP Litoral Norte — Carrera de grado orientada a la enseñanza de informática en educación
+                            media. Formación integral en pedagogía, didáctica y tecnología educativa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Auxiliar PC Contable Memory Conty</h3>
+                        <p>Instituto PuntoCom — Capacitación en gestión contable informatizada, uso de sistemas de
+                            registro, facturación y administración con software especializado.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Técnico en Reparación y Mantenimiento de PC</h3>
+                        <p>Instituto PuntoCom — Diagnóstico, reparación de hardware, mantenimiento preventivo y
+                            correctivo de equipos informáticos, ensamblaje y configuración de componentes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019</span>
+                        <h3>Operador PC Profesional Avanzado</h3>
+                        <p>Instituto Técnico Uruguay — Dominio de herramientas ofimáticas, sistemas operativos,
+                            navegación avanzada y productividad digital profesional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Autodidacta</span>
+                        <h3>Ciberseguridad</h3>
+                        <p>Formación continua a través de certificaciones internacionales (Google, Cisco, OPSWAT),
+                            laboratorios prácticos y estudio independiente en análisis de vulnerabilidades y protección
+                            de infraestructuras.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Constante aprendizaje</span>
+                        <h3>Desarrollo web y Programación</h3>
+                        <p>Aprendizaje autodidacta de HTML, CSS, JavaScript, Java, Python y frameworks modernos.
+                            Construcción de proyectos educativos y soluciones reales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ TECNOLOGÍAS (CAROUSEL) ═══════════════════ -->
+    <section id="tech" class="section tech-section">
+        <div class="container">
+            <h2 class="section-title reveal">Tecnologías y Herramientas</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="tech-carousel-wrapper">
+            <div class="tech-track" id="techTrack">
+                <div class="tech-item" title="HTML5"><span class="tech-icon">🌐</span>HTML</div>
+                <div class="tech-item" title="CSS3"><span class="tech-icon">🎨</span>CSS</div>
+                <div class="tech-item" title="JavaScript"><span class="tech-icon">⚡</span>JavaScript</div>
+                <div class="tech-item" title="Java"><span class="tech-icon">☕</span>Java</div>
+                <div class="tech-item" title="Python"><span class="tech-icon">🐍</span>Python</div>
+                <div class="tech-item" title="Google Cloud"><span class="tech-icon">☁️</span>Google Cloud</div>
+                <div class="tech-item" title="IntelliJ IDEA"><span class="tech-icon">💡</span>IntelliJ</div>
+                <div class="tech-item" title="VS Code"><span class="tech-icon">📝</span>VS Code</div>
+                <div class="tech-item" title="Git"><span class="tech-icon">🔀</span>Git</div>
+                <div class="tech-item" title="GitHub"><span class="tech-icon">🐙</span>GitHub</div>
+                <div class="tech-item" title="Linux"><span class="tech-icon">🐧</span>Linux</div>
+                <div class="tech-item" title="Wireshark"><span class="tech-icon">🦈</span>Wireshark</div>
+                <div class="tech-item" title="Nmap"><span class="tech-icon">🗺️</span>Nmap</div>
+                <div class="tech-item" title="Kali Linux"><span class="tech-icon">🐉</span>Kali Linux</div>
+                <div class="tech-item" title="Bash"><span class="tech-icon">💻</span>Bash</div>
+                <div class="tech-item" title="Memory Conty"><span class="tech-icon">📊</span>Memory Conty</div>
+                <div class="tech-item" title="Redes"><span class="tech-icon">🌍</span>Redes</div>
+                <div class="tech-item" title="Windows Server"><span class="tech-icon">🖥️</span>Windows Server</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ MIS PROFESIONES ═══════════════════ -->
+    <section id="professions" class="section professions-section">
+        <div class="container">
+            <h2 class="section-title reveal">Mis profesiones</h2>
+            <div class="section-line"></div>
+
+            <div class="professions-grid">
+                <div class="profession-card reveal">
+                    <div class="profession-icon">🎓</div>
+                    <h3>Profesor en Informática</h3>
+                    <p>Futuro docente comprometido con transformar la enseñanza de la tecnología. Busco inspirar el
+                        pensamiento crítico y la creatividad en cada aula.</p>
+                    <div class="profession-skills">
+                        <span>Pedagogía</span><span>Didáctica</span><span>Comunicación</span><span>Planificación</span>
+                    </div>
+                </div>
+                <div class="profession-card reveal">
+                    <div class="profession-icon">💻</div>
+                    <h3>Desarrollador</h3>
+                    <p>Construyendo soluciones con código limpio y buenas prácticas. Enfocado en desarrollo web y
+                        aplicaciones educativas.</p>
+                    <div class="profession-skills">
+                        <span>HTML/CSS/JS</span><span>Java</span><span>Python</span><span>Git</span>
+                    </div>
+                </div>
+                <div class="profession-card reveal">
+                    <div class="profession-icon">🛡️</div>
+                    <h3>Ciberseguridad</h3>
+                    <p>Autodidacta apasionado por la protección de sistemas y la seguridad de infraestructuras críticas.
+                        Enfoque ético y preventivo.</p>
+                    <div class="profession-skills">
+                        <span>Análisis de riesgos</span><span>Redes</span><span>Pentesting</span><span>OSINT</span>
+                    </div>
+                </div>
+                <div class="profession-card reveal">
+                    <div class="profession-icon">🔧</div>
+                    <h3>Técnico Informático</h3>
+                    <p>Experiencia en diagnóstico, reparación y mantenimiento de equipos. Soporte técnico integral para
+                        hardware y software.</p>
+                    <div class="profession-skills">
+                        <span>Hardware</span><span>Software</span><span>Redes</span><span>Diagnóstico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ EDUCACIÓN (Valores) ═══════════════════ -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <h2 class="section-title reveal">Educación</h2>
+            <div class="section-line"></div>
+            <p class="education-subtitle reveal">Mis valores como futuro docente</p>
+
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">🌱</div>
+                    <h3>Aprendizaje continuo</h3>
+                    <p>Un profesor que nunca deja de aprender es un profesor que nunca deja de inspirar.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🤝</div>
+                    <h3>Inclusión</h3>
+                    <p>La tecnología es para todos. Cada estudiante merece acceso equitativo al conocimiento digital.
+                    </p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">💡</div>
+                    <h3>Pensamiento crítico</h3>
+                    <p>No enseño a repetir, enseño a cuestionar. La verdadera educación forma mentes libres.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🔬</div>
+                    <h3>Innovación pedagógica</h3>
+                    <p>Integrar la tecnología como medio, no como fin. Crear experiencias de aprendizaje significativas.
+                    </p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🌎</div>
+                    <h3>Ética digital</h3>
+                    <p>Formar ciudadanos digitales responsables, conscientes de su huella en el mundo virtual.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">📖</div>
+                    <h3>Filosofía y tecnología</h3>
+                    <p>Reflexionar sobre el impacto humano de cada herramienta que creamos y utilizamos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROYECTOS & RECURSOS ═══════════════════ -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title reveal">Proyectos y Recursos Educativos</h2>
+            <div class="section-line"></div>
+
+            <h3 class="subsection-title reveal">📁 Proyectos de Desarrollo</h3>
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <div class="project-img-wrapper" data-img="assets/proyecto1.png">
+                        <img src="assets/proyecto1.png" alt="Sistema de Gestión de Restaurante" draggable="false"
+                            oncontextmenu="return false" loading="lazy">
+                        <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Sistema de Gestión de Restaurante</h4>
+                        <p>Proyecto educativo desarrollado como práctica de programación. Sistema completo de gestión
+                            para restaurantes con interfaz intuitiva.</p>
+                        <a href="https://github.com/retr0Sys/SistemaGestionRestaurante-Restaurant-CSS-CFE-2025-Pr2-T.S-E.C"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            Ver en GitHub
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="subsection-title reveal">📚 Recursos Educativos</h3>
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <div class="project-img-wrapper rea-cover">
+                        <div class="rea-placeholder" aria-label="Los Huesos y Músculos Digitales">
+                            <span class="rea-icon">🖥️</span>
+                            <span class="rea-label">Hardware & Software</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Los Huesos y Músculos Digitales</h4>
+                        <p>Recurso Educativo Abierto (REA) sobre el hardware y el software. Una exploración didáctica de
+                            la anatomía de una computadora.</p>
+                        <button class="btn btn-sm btn-disabled" disabled aria-label="Recurso en mantenimiento">
+                            🚧 En mantenimiento
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACTO ═══════════════════ -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title reveal">Hablemos</h2>
+            <div class="section-line"></div>
+            <p class="contact-subtitle reveal">¿Tenés una idea, un proyecto o simplemente querés conversar? Me
+                encantaría escucharte. <br>Dejame un mensaje y te respondo lo antes posible.</p>
+
+            <form id="contactForm" class="contact-form reveal" action="https://formsubmit.co/ajax/sosat279@gmail.com"
+                method="POST" novalidate>
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="form-group">
+                    <label for="contactName">Nombre</label>
+                    <input type="text" id="contactName" name="name" required minlength="2" maxlength="100"
+                        placeholder="Tu nombre" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="email" required maxlength="254"
+                        placeholder="tu@email.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Mensaje</label>
+                    <textarea id="contactMessage" name="message" required minlength="10" maxlength="2000" rows="5"
+                        placeholder="Tu mensaje..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">Enviar mensaje</button>
+                <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+
+            <div class="contact-socials reveal">
+                <a href="https://github.com/retr0Sys" target="_blank" rel="noopener noreferrer" class="social-btn"
+                    aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/thiago-sosa-993a673a6/" target="_blank" rel="noopener noreferrer"
+                    class="social-btn" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Thiago Sosa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════ LIGHTBOX ═══════════════════ -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <img id="lightboxImg" src="" alt="" draggable="false" oncontextmenu="return false">
+    </div>
+
+    <div id="securityToast" class="security-toast" role="alert" aria-live="assertive"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
