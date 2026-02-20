@@ -145,6 +145,20 @@
             navToggle.classList.toggle('active');
             navToggle.setAttribute('aria-expanded', isOpen);
             document.body.style.overflow = isOpen ? 'hidden' : '';
+
+            // Staggered animation for nav items
+            const items = $$('li', navLinks);
+            if (isOpen) {
+                items.forEach((item, i) => {
+                    item.style.transitionDelay = `${0.05 * i}s`;
+                    item.classList.add('nav-animate');
+                });
+            } else {
+                items.forEach(item => {
+                    item.style.transitionDelay = '0s';
+                    item.classList.remove('nav-animate');
+                });
+            }
         });
 
         $$('a', navLinks).forEach(link => {
@@ -153,8 +167,28 @@
                 navToggle.classList.remove('active');
                 navToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
+                $$('li', navLinks).forEach(item => {
+                    item.style.transitionDelay = '0s';
+                    item.classList.remove('nav-animate');
+                });
             });
         });
+
+        // Close mobile nav on scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (navLinks.classList.contains('open') && Math.abs(window.scrollY - lastScrollY) > 60) {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+                $$('li', navLinks).forEach(item => {
+                    item.style.transitionDelay = '0s';
+                    item.classList.remove('nav-animate');
+                });
+            }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
     }
 
     /* ═══════════════════════════════════════════
@@ -206,12 +240,17 @@
         setTimeout(() => { if (lightboxImg) lightboxImg.src = ''; }, 300);
     }
 
+    // Cert cards — click on img wrapper opens lightbox
     $$('.cert-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const src = card.dataset.img;
-            const alt = card.querySelector('img')?.alt || '';
-            if (src) openLightbox(src, alt);
-        });
+        const imgWrapper = card.querySelector('.cert-img-wrapper');
+        if (imgWrapper) {
+            imgWrapper.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const src = card.dataset.img;
+                const alt = card.querySelector('img')?.alt || '';
+                if (src) openLightbox(src, alt);
+            });
+        }
     });
 
     $$('.project-img-wrapper[data-img]').forEach(wrapper => {
@@ -241,9 +280,12 @@
     const submitBtn = $('#submitBtn');
 
     function sanitize(str) {
-        const div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
     }
 
     function isValidEmail(email) {
@@ -254,7 +296,8 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const honey = form.querySelector('[name="_honey"]');
+            // Honeypot check
+            const honey = form.querySelector('[name="_gotcha"]');
             if (honey && honey.value) return;
 
             const name = sanitize(form.querySelector('#contactName').value.trim());
@@ -274,11 +317,12 @@
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({ name, email, message })
                 });
-                if (res.ok) {
+                const data = await res.json();
+                if (res.ok && data.ok) {
                     showStatus('¡Mensaje enviado correctamente! Te responderé pronto.', 'success');
                     form.reset();
                 } else {
-                    showStatus('Hubo un error al enviar. Intentá de nuevo.', 'error');
+                    showStatus(data.error || 'Hubo un error al enviar. Intentá de nuevo.', 'error');
                 }
             } catch {
                 showStatus('Error de conexión. Verificá tu internet e intentá de nuevo.', 'error');
