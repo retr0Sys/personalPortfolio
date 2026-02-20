@@ -273,75 +273,7 @@
     });
 
     /* ═══════════════════════════════════════════
-       8. CONTACT FORM
-       ═══════════════════════════════════════════ */
-    const form = $('#contactForm');
-    const formStatus = $('#formStatus');
-    const submitBtn = $('#submitBtn');
-
-    function sanitize(str) {
-        return str
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
-    }
-
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Honeypot check
-            const honey = form.querySelector('[name="_gotcha"]');
-            if (honey && honey.value) return;
-
-            const name = sanitize(form.querySelector('#contactName').value.trim());
-            const email = sanitize(form.querySelector('#contactEmail').value.trim());
-            const message = sanitize(form.querySelector('#contactMessage').value.trim());
-
-            if (!name || name.length < 2) { showStatus('Por favor, ingresá tu nombre.', 'error'); return; }
-            if (!isValidEmail(email)) { showStatus('Por favor, ingresá un email válido.', 'error'); return; }
-            if (!message || message.length < 10) { showStatus('El mensaje debe tener al menos 10 caracteres.', 'error'); return; }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            try {
-                const res = await fetch(form.action, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({ name, email, message })
-                });
-                const data = await res.json();
-                if (res.ok && data.ok) {
-                    showStatus('¡Mensaje enviado correctamente! Te responderé pronto.', 'success');
-                    form.reset();
-                } else {
-                    showStatus(data.error || 'Hubo un error al enviar. Intentá de nuevo.', 'error');
-                }
-            } catch {
-                showStatus('Error de conexión. Verificá tu internet e intentá de nuevo.', 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar mensaje';
-            }
-        });
-    }
-
-    function showStatus(msg, type) {
-        if (!formStatus) return;
-        formStatus.textContent = msg;
-        formStatus.className = 'form-status ' + type;
-        setTimeout(() => { formStatus.textContent = ''; formStatus.className = 'form-status'; }, 5000);
-    }
-
-    /* ═══════════════════════════════════════════
-       9. SECURITY MEASURES
+       8. SECURITY MEASURES & CONTACT LOGIC
        ═══════════════════════════════════════════ */
     const toast = $('#securityToast');
 
@@ -350,6 +282,19 @@
         toast.textContent = msg;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // Secure Email Link Construction
+    const emailContact = $('#emailContact');
+    if (emailContact) {
+        emailContact.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Obfuscated to prevent simple spam bot scraping
+            const user = 'sosat279';
+            const domain = 'gmail.com';
+            const subject = 'Contacto%20desde%20el%20Portfolio';
+            window.location.href = `mailto:${user}@${domain}?subject=${subject}`;
+        });
     }
 
     document.addEventListener('contextmenu', (e) => {
