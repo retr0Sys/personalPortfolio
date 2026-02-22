@@ -10,6 +10,28 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Thiago Sosa — Portfolio</title>
 
+    <!-- SEO & Social -->
+    <meta name="author" content="Thiago Sosa">
+    <meta name="keywords"
+        content="Thiago Sosa, portfolio, informática, ciberseguridad, desarrollo web, profesor, Uruguay">
+    <meta name="theme-color" content="#060a13">
+    <link rel="canonical" href="https://retr0sys.github.io/personalPortfolio/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thiago Sosa — Portfolio">
+    <meta property="og:description"
+        content="Portfolio de Thiago Sosa — Estudiante de Profesorado en Informática, Ciberseguridad, Desarrollo y más.">
+    <meta property="og:image" content="https://retr0sys.github.io/personalPortfolio/assets/og-preview.png">
+    <meta property="og:url" content="https://retr0sys.github.io/personalPortfolio/">
+    <meta property="og:locale" content="es_UY">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thiago Sosa — Portfolio">
+    <meta name="twitter:description" content="Estudiante de Profesorado en Informática · Ciberseguridad · Desarrollo">
+    <meta name="twitter:image" content="https://retr0sys.github.io/personalPortfolio/assets/og-preview.png">
+
     <!-- Favicon SVG inline -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%230056D2' d='M16,2 L4,7 C4,7 4,15 4,18 C4,24 10,30 16,32 C22,30 28,24 28,18 C28,15 28,7 28,7 L16,2 Z'/><path fill='%23FFFFFF' d='M10.5,17 L14,13 L12,13 L8,17 L12,21 L14,21 L10.5,17 Z M21.5,17 L18,21 L20,21 L24,17 L20,13 L18,13 L21.5,17 Z M15,12 L13,22 L15,22 L17,12 L15,12 Z'/></svg>"
@@ -21,6 +43,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+
+    <!-- DevIcons + FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -129,6 +155,30 @@
                             <span class="philosophy-author">— William Butler Yeats</span>
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ STATS ═══════════════════ -->
+    <section id="stats" class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Certificaciones</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="18">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Tecnologías</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Años aprendiendo</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Áreas de enfoque</span>
                 </div>
             </div>
         </div>
@@ -249,8 +299,14 @@
             <h2 class="section-title reveal">Formación y Trayectoria</h2>
             <div class="section-line"></div>
 
+            <div class="timeline-filters reveal">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="formal">Formal</button>
+                <button class="filter-btn" data-filter="autodidacta">Autodidacta</button>
+            </div>
+
             <div class="timeline">
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="formal">
                     <div class="timeline-dot accent"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2024 — Actualidad</span>
@@ -259,7 +315,7 @@
                             media. Formación integral en pedagogía, didáctica y tecnología educativa.</p>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="formal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2024</span>
@@ -268,7 +324,7 @@
                             registro, facturación y administración con software especializado.</p>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="formal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2023</span>
@@ -277,7 +333,7 @@
                             correctivo de equipos informáticos, ensamblaje y configuración de componentes.</p>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="formal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2019</span>
@@ -286,7 +342,7 @@
                             navegación avanzada y productividad digital profesional.</p>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="autodidacta">
                     <div class="timeline-dot accent"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Autodidacta</span>
@@ -296,7 +352,7 @@
                             de infraestructuras.</p>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
+                <div class="timeline-item reveal" data-type="autodidacta">
                     <div class="timeline-dot accent"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Constante aprendizaje</span>
@@ -309,32 +365,95 @@
         </div>
     </section>
 
-    <!-- ═══════════════════ TECNOLOGÍAS (CAROUSEL) ═══════════════════ -->
+    <!-- ═══════════════════ TECNOLOGÍAS (TABS + GRID) ═══════════════════ -->
     <section id="tech" class="section tech-section">
         <div class="container">
             <h2 class="section-title reveal">Tecnologías y Herramientas</h2>
             <div class="section-line"></div>
-        </div>
-        <div class="tech-carousel-wrapper">
-            <div class="tech-track" id="techTrack">
-                <div class="tech-item" title="HTML5"><span class="tech-icon">🌐</span>HTML</div>
-                <div class="tech-item" title="CSS3"><span class="tech-icon">🎨</span>CSS</div>
-                <div class="tech-item" title="JavaScript"><span class="tech-icon">⚡</span>JavaScript</div>
-                <div class="tech-item" title="Java"><span class="tech-icon">☕</span>Java</div>
-                <div class="tech-item" title="Python"><span class="tech-icon">🐍</span>Python</div>
-                <div class="tech-item" title="Google Cloud"><span class="tech-icon">☁️</span>Google Cloud</div>
-                <div class="tech-item" title="IntelliJ IDEA"><span class="tech-icon">💡</span>IntelliJ</div>
-                <div class="tech-item" title="VS Code"><span class="tech-icon">📝</span>VS Code</div>
-                <div class="tech-item" title="Git"><span class="tech-icon">🔀</span>Git</div>
-                <div class="tech-item" title="GitHub"><span class="tech-icon">🐙</span>GitHub</div>
-                <div class="tech-item" title="Linux"><span class="tech-icon">🐧</span>Linux</div>
-                <div class="tech-item" title="Wireshark"><span class="tech-icon">🦈</span>Wireshark</div>
-                <div class="tech-item" title="Nmap"><span class="tech-icon">🗺️</span>Nmap</div>
-                <div class="tech-item" title="Kali Linux"><span class="tech-icon">🐉</span>Kali Linux</div>
-                <div class="tech-item" title="Bash"><span class="tech-icon">💻</span>Bash</div>
-                <div class="tech-item" title="Memory Conty"><span class="tech-icon">📊</span>Memory Conty</div>
-                <div class="tech-item" title="Redes"><span class="tech-icon">🌍</span>Redes</div>
-                <div class="tech-item" title="Windows Server"><span class="tech-icon">🖥️</span>Windows Server</div>
+
+            <div class="tech-tabs reveal">
+                <button class="tech-tab active" data-category="all">Todos</button>
+                <button class="tech-tab" data-category="lenguajes">Lenguajes</button>
+                <button class="tech-tab" data-category="herramientas">Herramientas</button>
+                <button class="tech-tab" data-category="ciberseguridad">Ciberseguridad</button>
+                <button class="tech-tab" data-category="cloud">Cloud & Redes</button>
+            </div>
+
+            <div class="tech-grid" id="techGrid">
+                <div class="tech-item reveal" data-category="lenguajes" title="HTML5"><span class="tech-icon"><i
+                            class="devicon-html5-plain colored"></i></span>HTML<div class="skill-dots" data-level="5">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="lenguajes" title="CSS3"><span class="tech-icon"><i
+                            class="devicon-css3-plain colored"></i></span>CSS<div class="skill-dots" data-level="5">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="lenguajes" title="JavaScript"><span class="tech-icon"><i
+                            class="devicon-javascript-plain colored"></i></span>JavaScript<div class="skill-dots"
+                        data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="lenguajes" title="Java"><span class="tech-icon"><i
+                            class="devicon-java-plain colored"></i></span>Java<div class="skill-dots" data-level="4">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="lenguajes" title="Python"><span class="tech-icon"><i
+                            class="devicon-python-plain colored"></i></span>Python<div class="skill-dots"
+                        data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="lenguajes" title="Bash"><span class="tech-icon"><i
+                            class="devicon-bash-plain"></i></span>Bash<div class="skill-dots" data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="herramientas" title="IntelliJ IDEA"><span
+                        class="tech-icon"><i class="devicon-intellij-plain colored"></i></span>IntelliJ<div
+                        class="skill-dots" data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="herramientas" title="VS Code"><span class="tech-icon"><i
+                            class="devicon-vscode-plain colored"></i></span>VS Code<div class="skill-dots"
+                        data-level="5"></div>
+                </div>
+                <div class="tech-item reveal" data-category="herramientas" title="Git"><span class="tech-icon"><i
+                            class="devicon-git-plain colored"></i></span>Git<div class="skill-dots" data-level="4">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="herramientas" title="GitHub"><span class="tech-icon"><i
+                            class="devicon-github-original"></i></span>GitHub<div class="skill-dots" data-level="5">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="herramientas" title="Memory Conty"><span
+                        class="tech-icon"><i class="fa-solid fa-chart-column"></i></span>Memory Conty<div
+                        class="skill-dots" data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="ciberseguridad" title="Wireshark"><span
+                        class="tech-icon"><i class="fa-solid fa-fish-fins"></i></span>Wireshark<div class="skill-dots"
+                        data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="ciberseguridad" title="Nmap"><span class="tech-icon"><i
+                            class="fa-solid fa-satellite-dish"></i></span>Nmap<div class="skill-dots" data-level="4">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="ciberseguridad" title="Kali Linux"><span
+                        class="tech-icon"><i class="devicon-linux-plain colored"></i></span>Kali Linux<div
+                        class="skill-dots" data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="cloud" title="Google Cloud"><span class="tech-icon"><i
+                            class="devicon-googlecloud-plain colored"></i></span>Google Cloud<div class="skill-dots"
+                        data-level="4"></div>
+                </div>
+                <div class="tech-item reveal" data-category="cloud" title="Linux"><span class="tech-icon"><i
+                            class="devicon-linux-plain"></i></span>Linux<div class="skill-dots" data-level="5"></div>
+                </div>
+                <div class="tech-item reveal" data-category="cloud" title="Redes"><span class="tech-icon"><i
+                            class="fa-solid fa-network-wired"></i></span>Redes<div class="skill-dots" data-level="4">
+                    </div>
+                </div>
+                <div class="tech-item reveal" data-category="cloud" title="Windows Server"><span class="tech-icon"><i
+                            class="devicon-windows11-original colored"></i></span>Windows Server<div class="skill-dots"
+                        data-level="4"></div>
+                </div>
+            </div>
+
+            <div class="tech-more-container reveal">
+                <button id="techShowMoreBtn" class="tech-more-btn">Mostrar más</button>
             </div>
         </div>
     </section>
@@ -347,7 +466,7 @@
 
             <div class="professions-grid">
                 <div class="profession-card reveal">
-                    <div class="profession-icon">🎓</div>
+                    <div class="profession-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
                     <h3>Profesor en Informática</h3>
                     <p>Futuro docente comprometido con transformar la enseñanza de la tecnología. Busco inspirar el
                         pensamiento crítico y la creatividad en cada aula.</p>
@@ -356,7 +475,7 @@
                     </div>
                 </div>
                 <div class="profession-card reveal">
-                    <div class="profession-icon">💻</div>
+                    <div class="profession-icon"><i class="fa-solid fa-code"></i></div>
                     <h3>Desarrollador</h3>
                     <p>Construyendo soluciones con código limpio y buenas prácticas. Enfocado en desarrollo web y
                         aplicaciones educativas.</p>
@@ -365,7 +484,7 @@
                     </div>
                 </div>
                 <div class="profession-card reveal">
-                    <div class="profession-icon">🛡️</div>
+                    <div class="profession-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>Ciberseguridad</h3>
                     <p>Autodidacta apasionado por la protección de sistemas y la seguridad de infraestructuras críticas.
                         Enfoque ético y preventivo.</p>
@@ -374,7 +493,7 @@
                     </div>
                 </div>
                 <div class="profession-card reveal">
-                    <div class="profession-icon">🔧</div>
+                    <div class="profession-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <h3>Técnico Informático</h3>
                     <p>Experiencia en diagnóstico, reparación y mantenimiento de equipos. Soporte técnico integral para
                         hardware y software.</p>
@@ -543,6 +662,12 @@
     <!-- ═══════════════════ FOOTER ═══════════════════ -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-social">
+                <a href="https://github.com/retr0Sys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/thiago-sosa-993a673a6/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
             <p>Hecho con mucho <span class="heart">❤</span> y <span class="mate">🧉</span></p>
             <p>&copy; 2026 Thiago Sosa. Todos los derechos reservados.</p>
         </div>
@@ -555,6 +680,31 @@
     </div>
 
     <div id="securityToast" class="security-toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- ═══════════════════ TERMINAL EASTER EGG ═══════════════════ -->
+    <div id="terminal" class="terminal-overlay" role="dialog" aria-modal="true" aria-label="Terminal">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-dots"><span></span><span></span><span></span></span>
+                <span class="terminal-title">retr0Sys@portfolio:~</span>
+                <button class="terminal-close" aria-label="Cerrar terminal">&times;</button>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-welcome">Bienvenido al terminal de Thiago. Escribí <span
+                        class="cmd-highlight">help</span> para ver los comandos.</div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">$ </span>
+                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false"
+                    autofocus>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
