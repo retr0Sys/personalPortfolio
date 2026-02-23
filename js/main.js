@@ -379,6 +379,27 @@
     });
 
     /* ═══════════════════════════════════════════
+       10b. PROJECT TABS FILTERING
+       ═══════════════════════════════════════════ */
+    const projectTabs = $$('.project-tab');
+    const projectCards = $$('#projectsGrid .project-card');
+
+    projectTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            projectTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.dataset.filter;
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.type === filter) {
+                    card.classList.remove('filter-hidden');
+                } else {
+                    card.classList.add('filter-hidden');
+                }
+            });
+        });
+    });
+
+    /* ═══════════════════════════════════════════
        11. 3D TILT EFFECT ON PROFESSION CARDS
        ═══════════════════════════════════════════ */
     $$('.profession-card').forEach(card => {
@@ -483,10 +504,11 @@
 │  📍 Uruguay                 │
 └──────────────────────────────┘`,
 
-        skills: () => `⚡ Lenguajes: HTML, CSS, JS, Java, Python, Bash
-🔧 Herramientas: VS Code, IntelliJ, Git, GitHub
-🛡️ CyberSec: Wireshark, Nmap, Kali Linux
-☁️ Cloud: Google Cloud, Linux, Redes, Win Server`,
+        skills: () => `⚡ Lenguajes: HTML, CSS, JS, Java, Python, Bash, SQL
+🔧 Herramientas: VS Code, IntelliJ, Git, GitHub, Docker, VirtualBox, Proxmox
+🛡️ CyberSec: Wireshark, Nmap, Kali, EDR, Firewall, IDS/IPS, SIEM, SOAR, IAM
+☁️ Cloud & Redes: Google Cloud, Linux, Arch, Redes, Win Server, Packet Tracer
+🎮 Educación: Scratch, Micro:Bit, AI/ML, EndPoint Manager`,
 
         contact: () => `📧 Email: sosat279@gmail.com
 🐙 GitHub: github.com/retr0Sys

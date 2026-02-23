@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════
-   THIAGO SOSA — PORTFOLIO  v2.1
-   Design System — LED + Particles + Background Deco
+   THIAGO SOSA — PORTFOLIO  v3.0
+   Redesign UX/UI & Skills
    ══════════════════════════════════════════════════ */
 
 /* ── Tokens ── */
@@ -154,13 +154,6 @@ ul {
     margin: 0 auto 48px;
     border-radius: 2px;
     box-shadow: var(--led);
-}
-
-.subsection-title {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--text-heading);
-    margin: 48px 0 24px;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1304,7 +1297,7 @@ body::after {
 }
 
 /* ══════════════════════════════════════════════════
-   EDUCATION
+   EDUCATION — Premium icon cards
    ══════════════════════════════════════════════════ */
 .education-section {
     background: var(--bg-secondary);
@@ -1319,40 +1312,69 @@ body::after {
     margin-bottom: 40px;
 }
 
-.values-grid {
+.edu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.value-card {
-    padding: 28px 24px;
+.edu-card {
+    padding: 36px 24px;
     background: var(--bg-card);
     border: 1px solid var(--border-led);
     border-radius: var(--radius);
     text-align: center;
     transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
-.value-card:hover {
+.edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.edu-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--led);
+    transform: translateY(-6px);
+    box-shadow: var(--led), 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-.value-icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
+.edu-card:hover::before {
+    opacity: 1;
 }
 
-.value-card h3 {
+.edu-icon {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    color: var(--accent);
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.3));
+    transition: transform var(--transition);
+}
+
+.edu-icon i {
+    font-size: 2.4rem;
+}
+
+.edu-card:hover .edu-icon {
+    transform: scale(1.15);
+}
+
+.edu-card h3 {
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--text-heading);
     margin-bottom: 8px;
 }
 
-.value-card p {
+.edu-card p {
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.6;
@@ -1372,18 +1394,7 @@ body::after {
     gap: 24px;
 }
 
-.project-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-led);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: all var(--transition);
-}
 
-.project-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--led), var(--shadow);
-}
 
 .project-img-wrapper {
     position: relative;
@@ -1449,6 +1460,90 @@ body::after {
     color: var(--text-muted);
     margin-bottom: 16px;
     line-height: 1.6;
+}
+
+/* Project filter tabs */
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.project-tab {
+    padding: 8px 20px;
+    font-family: var(--font);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    border: 1px solid var(--border-led);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.project-tab:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.project-tab.active {
+    background: var(--accent-glow-strong);
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: var(--led);
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-led);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all var(--transition);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    opacity: 0;
+    transition: opacity var(--transition);
+    z-index: 2;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card.filter-hidden {
+    display: none;
+}
+
+.project-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    padding: 4px 12px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
+
+.project-badge.recurso {
+    color: var(--accent-2);
+    background: rgba(124, 58, 237, 0.08);
+    border-color: rgba(124, 58, 237, 0.2);
 }
 
 /* ══════════════════════════════════════════════════
@@ -2071,8 +2166,13 @@ body::after {
         grid-template-columns: 1fr;
     }
 
-    .values-grid {
+    .edu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .languages-grid {
         grid-template-columns: 1fr;
+        max-width: 400px;
     }
 
     .contact-links-grid {
@@ -2142,6 +2242,10 @@ body::after {
 
     .profession-card {
         min-height: 280px;
+    }
+
+    .edu-grid {
+        grid-template-columns: 1fr;
     }
 
     .tech-item {
