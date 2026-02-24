@@ -10,6 +10,20 @@
     const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
     /* ═══════════════════════════════════════════
+       0. OWASP SECURITY: HTTPS ENFORCER & ERROR HANDLER
+       ═══════════════════════════════════════════ */
+    // Enforce HTTPS in production [OWASP A04]
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        window.location.protocol = 'https:';
+    }
+
+    // Global error handler to prevent stack trace leaks [OWASP A10]
+    window.addEventListener('error', function (e) {
+        console.warn('🔒 Error interno interceptado de manera segura.');
+        e.preventDefault();
+    });
+
+    /* ═══════════════════════════════════════════
        1. PARTICLES BACKGROUND
        ═══════════════════════════════════════════ */
     const canvas = $('#particles-canvas');
@@ -561,6 +575,8 @@
             }
             const output = document.createElement('div');
             output.className = 'term-output';
+            // OWASP A05 Note: 'result' here is strictly hardcoded within 'terminalCommands'.
+            // It is totally safe to use innerHTML. User input 'cmd' is handled securely via textContent above.
             output.innerHTML = result;
             terminalBody.appendChild(output);
         } else {
