@@ -3,7 +3,8 @@
    Redesign UX/UI & Skills
    ══════════════════════════════════════════════════ */
 
-/* ── Tokens ── */
+/* ── Tokens (Variables Globales CSS) ── */
+/* Define la paleta de colores, la tipografía y el diseño para mantener consistencia en todo el sitio */
 :root {
     --bg-primary: #060a13;
     --bg-secondary: #0b1120;
@@ -31,7 +32,8 @@
     --max-width: 1100px;
 }
 
-/* ── Reset ── */
+/* ── Reset CSS ── */
+/* Limpia los márgenes y rellenos predeterminados de los navegadores */
 *,
 *::before,
 *::after {
@@ -99,7 +101,8 @@ ul {
     outline-offset: 2px;
 }
 
-/* ── Utilities ── */
+/* ── Utilities (Clases Reutilizables) ── */
+/* Contenedor principal que centra el contenido y limita su ancho máximo */
 .container {
     width: 100%;
     max-width: var(--max-width);

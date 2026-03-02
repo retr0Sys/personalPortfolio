@@ -39,10 +39,20 @@
         resize();
         window.addEventListener('resize', resize);
 
+        /**
+         * Clase que representa una partícula individual en la animación de fondo.
+         * Maneja su propia posición, velocidad y renderizado.
+         */
         class Particle {
+            /**
+             * Inicializa la partícula reseteando sus propiedades.
+             */
             constructor() {
                 this.reset();
             }
+            /**
+             * Aleatoriza la posición, velocidad, tamaño y color de la partícula.
+             */
             reset() {
                 this.x = Math.random() * w;
                 this.y = Math.random() * h;
@@ -54,12 +64,19 @@
                     ? `rgba(124, 58, 237, ${this.alpha})`
                     : `rgba(0, 229, 255, ${this.alpha})`;
             }
+            /**
+             * Actualiza la posición de la partícula basándose en su velocidad.
+             * Invierte la dirección si rebota contra los bordes del canvas.
+             */
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
                 if (this.x < 0 || this.x > w) this.vx *= -1;
                 if (this.y < 0 || this.y > h) this.vy *= -1;
             }
+            /**
+             * Dibuja la partícula en el canvas.
+             */
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
@@ -71,6 +88,10 @@
         const count = window.innerWidth < 768 ? 40 : 80;
         for (let i = 0; i < count; i++) particles.push(new Particle());
 
+        /**
+         * Dibuja líneas entre partículas que están cerca una de la otra
+         * para crear un efecto de red o constelación.
+         */
         function connectParticles() {
             const maxDist = 140;
             const maxDistSq = maxDist * maxDist;
@@ -92,6 +113,9 @@
             }
         }
 
+        /**
+         * Bucle principal de animación para el sistema de partículas.
+         */
         function animateParticles() {
             ctx.clearRect(0, 0, w, h);
             particles.forEach(p => { p.update(); p.draw(); });
@@ -115,6 +139,10 @@
 
     let roleIdx = 0, charIdx = 0, deleting = false;
 
+    /**
+     * Función paso a paso para el efecto de máquina de escribir.
+     * Añade y borra caracteres de forma secuencial y aplica un efecto visual de "glitch" al terminar una palabra.
+     */
     function typeStep() {
         if (!typingEl) return;
         const current = roles[roleIdx];
@@ -163,6 +191,10 @@
     const INITIAL_LIMIT = 8;
     let isExpanded = false;
 
+    /**
+     * Renderiza o filtra los elementos de tecnologías (tech-items) según su categoría.
+     * @param {string} category - La categoría a mostrar ('all' para mostrar todas).
+     */
     function renderTechItems(category) {
         let visibleCount = 0;
         techItems.forEach(item => {
@@ -214,6 +246,9 @@
     const navToggle = $('#navToggle');
     const navLinks = $('#navLinks');
 
+    /**
+     * Cierra el menú de navegación móvil y restablece las animaciones y el scroll de la página.
+     */
     function closeMobileNav() {
         if (!navLinks || !navToggle) return;
         navLinks.classList.remove('open');
@@ -322,6 +357,11 @@
     const lightbox = $('#lightbox');
     const lightboxImg = $('#lightboxImg');
 
+    /**
+     * Abre el visor de imágenes (lightbox) a pantalla completa mostrando una imagen.
+     * @param {string} src - Ruta del archivo de imagen.
+     * @param {string} alt - Texto alternativo de la imagen.
+     */
     function openLightbox(src, alt) {
         if (!lightbox || !lightboxImg) return;
         lightboxImg.src = src;
@@ -330,6 +370,9 @@
         document.body.style.overflow = 'hidden';
     }
 
+    /**
+     * Cierra el visor de imágenes (lightbox) y restablece el scroll de la página.
+     */
     function closeLightbox() {
         if (!lightbox) return;
         lightbox.classList.remove('active');
@@ -438,6 +481,10 @@
        ═══════════════════════════════════════════ */
     const toast = $('#securityToast');
 
+    /**
+     * Muestra una notificación emergente temporal (toast) en la pantalla.
+     * @param {string} msg - El mensaje a mostrar.
+     */
     function showToast(msg) {
         if (!toast) return;
         toast.textContent = msg;
@@ -539,6 +586,9 @@
         exit: () => '__EXIT__'
     };
 
+    /**
+     * Abre el emulador de terminal visual (Easter Egg) a pantalla completa.
+     */
     function openTerminal() {
         if (!terminal) return;
         terminal.classList.add('active');
@@ -546,12 +596,19 @@
         setTimeout(() => terminalInput?.focus(), 300);
     }
 
+    /**
+     * Cierra el emulador de terminal visual.
+     */
     function closeTerminal() {
         if (!terminal) return;
         terminal.classList.remove('active');
         document.body.style.overflow = '';
     }
 
+    /**
+     * Procesa y ejecuta un comando ingresado en la terminal emulada.
+     * @param {string} cmd - El comando introducido por el usuario.
+     */
     function handleTerminalCommand(cmd) {
         const trimmed = cmd.trim().toLowerCase();
         if (!trimmed) return;

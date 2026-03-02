@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- OWASP Content Security Policy -->
+    <!-- OWASP Content Security Policy: Restringe los orígenes de contenido para prevenir ataques XSS y de inyección de código -->
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https://retr0sys.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <meta name="description"
@@ -58,7 +58,7 @@
 
 <body>
 
-    <!-- PARTICLES BACKGROUND -->
+    <!-- PARTICLES BACKGROUND: Canvas interactivo renderizado mediante JS (main.js) -->
     <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
     <!-- ═══════════════════ NAVBAR ═══════════════════ -->
@@ -178,7 +178,7 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card reveal">
-                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-number" data-target="7">0</span><span class="stat-plus">+</span>
                     <span class="stat-label">Certificaciones</span>
                 </div>
                 <div class="stat-card reveal">
@@ -233,6 +233,21 @@
                         <p>Certificación en protección de infraestructura crítica (ICIP), cubriendo conceptos de
                             seguridad industrial y OT/ICS.</p>
                         <a href="https://www.credly.com/badges/683d5e51-0c06-4f16-97ab-4306f0d978ae/public_url"
+                            target="_blank" rel="noopener noreferrer" class="cert-verify-link">🔗 Verificar
+                            credencial</a>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-img="assets/endpoint-security.png">
+                    <div class="cert-img-wrapper">
+                        <img src="assets/endpoint-security.png" alt="Endpoint Security" draggable="false"
+                            oncontextmenu="return false" loading="lazy">
+                        <div class="cert-overlay"><span>🔍 Ampliar</span></div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Endpoint Security</h4>
+                        <p>Certificación de Cisco en seguridad de endpoints: protección contra malware, vulnerabilidades
+                            y respuesta a incidentes.</p>
+                        <a href="https://www.credly.com/badges/b4ee6fc2-f741-4186-972a-875e48d62cf8/public_url"
                             target="_blank" rel="noopener noreferrer" class="cert-verify-link">🔗 Verificar
                             credencial</a>
                     </div>
@@ -379,6 +394,7 @@
     </section>
 
     <!-- ═══════════════════ TECNOLOGÍAS (TABS + GRID) ═══════════════════ -->
+    <!-- Sección dinámica filtrada por JS según el atributo 'data-category' de cada botón -->
     <section id="tech" class="section tech-section">
         <div class="container">
             <h2 class="section-title reveal">Tecnologías y Herramientas</h2>
@@ -755,6 +771,7 @@
         <img id="lightboxImg" src="" alt="" draggable="false" oncontextmenu="return false">
     </div>
 
+    <!-- Toast para mensajes de seguridad (ej. herramientas de desarrollo deshabilitadas). Usa aria-live="assertive" para lectores de pantalla. -->
     <div id="securityToast" class="security-toast" role="alert" aria-live="assertive"></div>
 
     <!-- Back to Top -->
@@ -763,6 +780,7 @@
     </button>
 
     <!-- ═══════════════════ TERMINAL EASTER EGG ═══════════════════ -->
+    <!-- Emulador de terminal accesible mediante teclas (Ctrl+Shift+T). Lógica en JS. -->
     <div id="terminal" class="terminal-overlay" role="dialog" aria-modal="true" aria-label="Terminal">
         <div class="terminal-window">
             <div class="terminal-header">
