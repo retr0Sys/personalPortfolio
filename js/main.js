@@ -540,7 +540,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       14. TERMINAL EASTER EGG (Ctrl+Shift+T)
+       14. TERMINAL EASTER EGG (Ctrl+Alt+T)
        ═══════════════════════════════════════════ */
     const terminal = $('#terminal');
     const terminalInput = $('#terminalInput');
@@ -575,11 +575,19 @@
 🐙 GitHub: github.com/retr0Sys
 🔗 LinkedIn: linkedin.com/in/thiago-sosa-993a673a6`,
 
-        certs: () => `📜 Google Cloud Cybersecurity
-📜 OPSWAT - Infraestructura Crítica
-📜 Cisco - Networking Devices
-📜 Cisco - Networking Basics
-📜 Cisco - Intro to Cybersecurity
+        certs: () => `📜 Fortinet — Certified Fundamentals Cybersecurity
+📜 Fortinet — Getting Started in Cybersecurity
+📜 Fortinet — Intro to the Threat Landscape
+📜 Google Cloud Cybersecurity
+📜 OPSWAT — Infraestructura Crítica (ICIP)
+📜 Cisco — Junior Cybersecurity Analyst
+📜 Cisco — Cyber Threat Management
+📜 Cisco — Network Defense
+📜 Cisco — Endpoint Security
+📜 Cisco — Networking Devices & Initial Config
+📜 Cisco — Networking Basics
+📜 Cisco — Intro to Cybersecurity
+📜 Certificado en Ciberseguridad y Hacking Ético
 📜 Certificado Inteligencia Artificial`,
 
         clear: () => '__CLEAR__',
@@ -655,9 +663,9 @@
         });
     }
 
-    // Open with Ctrl+Shift+T (won't conflict with browser since we prevent it in specific cases)
+    // Open with Ctrl+Alt+T (avoids browser conflict with Ctrl+Shift+T which reopens closed tabs)
     document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'T') {
+        if (e.ctrlKey && e.altKey && e.key.toUpperCase() === 'T') {
             e.preventDefault();
             if (terminal?.classList.contains('active')) {
                 closeTerminal();
@@ -666,6 +674,9 @@
             }
         }
     });
+
+    // Footer hint button — clicking ">_" opens the terminal
+    $('#terminalHintBtn')?.addEventListener('click', openTerminal);
 
     // Close terminal on overlay click or close button
     if (terminal) {

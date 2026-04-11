@@ -1691,6 +1691,61 @@ body::after {
 }
 
 /* ══════════════════════════════════════════════════
+   TERMINAL HINT — Easter Egg subtle clue in footer
+   ══════════════════════════════════════════════════ */
+.terminal-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    background: none;
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.terminal-hint:hover {
+    border-color: rgba(0, 229, 255, 0.45);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.12);
+}
+
+.terminal-hint-icon {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgba(0, 229, 255, 0.35);
+    animation: hint-blink 2.6s ease-in-out infinite;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.terminal-hint:hover .terminal-hint-icon {
+    color: var(--accent);
+}
+
+@keyframes hint-blink {
+    0%, 90%, 100% { opacity: 1; }
+    95%            { opacity: 0; }
+}
+
+/* Tooltip that appears on hover */
+.terminal-hint-tooltip {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: rgba(0, 229, 255, 0);
+    white-space: nowrap;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.terminal-hint:hover .terminal-hint-tooltip {
+    color: rgba(0, 229, 255, 0.55);
+}
+
+/* ══════════════════════════════════════════════════
    LIGHTBOX
    ══════════════════════════════════════════════════ */
 .lightbox {
