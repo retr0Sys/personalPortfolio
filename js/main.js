@@ -575,18 +575,22 @@
 🐙 GitHub: github.com/retr0Sys
 🔗 LinkedIn: linkedin.com/in/thiago-sosa-993a673a6`,
 
-        certs: () => `📜 Fortinet — Certified Fundamentals Cybersecurity
-📜 Fortinet — Getting Started in Cybersecurity
-📜 Fortinet — Intro to the Threat Landscape
+        certs: () => `📜 Connect and Protect: Networks and Network Security | Coursea
+📜 Play It Safe: Manage Security Risks in Cybersecurity | Coursea
+📜 Cybersecurity Foundation Google | Coursea
+📜 Fortinet Certified Fundamentals Cybersecurity
+📜 Technical Introduction to Cybersecurity Fortinet
+📜 Getting Started in Cybersecurity Fortinet
+📜 Introduction to the Threat Landscape Fortinet
 📜 Google Cloud Cybersecurity
-📜 OPSWAT — Infraestructura Crítica (ICIP)
-📜 Cisco — Junior Cybersecurity Analyst
-📜 Cisco — Cyber Threat Management
-📜 Cisco — Network Defense
-📜 Cisco — Endpoint Security
-📜 Cisco — Networking Devices & Initial Config
-📜 Cisco — Networking Basics
-📜 Cisco — Intro to Cybersecurity
+📜 OPSWAT — Protección de Infraestructura Crítica
+📜 Junior Cybersecurity Analyst Career Path
+📜 Cyber Threat Management
+📜 Network Defense
+📜 Endpoint Security
+📜 Networking Devices & Initial Configuration
+📜 Networking Basics
+📜 Introduction to Cybersecurity
 📜 Certificado en Ciberseguridad y Hacking Ético
 📜 Certificado Inteligencia Artificial`,
 
